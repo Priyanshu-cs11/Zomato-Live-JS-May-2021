@@ -26,14 +26,27 @@
 </head>
 <body>
     <div id = "coins">
-        <img id ="coin" width = "50px" height="50px" src="./women.png" alt="">
+        <img id = "coin" width = "50px" height="50px" src="./coin.png" alt="">
     </div>
     <script>
-        // setTimeout(function(){
-        //     document.body.innerHTML = "<h1>Now we think something else</h1>"
-        // },2000);
-        // console.log("say hi")
-        
+        setInterval(function(){
+            let coin  = document.createElement("img");
+            coin.src="./coin.png";
+            
+            let rw  = parseInt(window.innerWidth * Math.random())
+            let rh  = parseInt(window.innerHeight * Math.random())
+
+            coin.style.setProperty("position" , "absolute");
+            coin.style.setProperty("bottom" , `${rh}px`);
+            coin.style.setProperty("left" , rw);
+
+            coin.style.setProperty("width", "50px");
+            coin.style.setProperty("height", "50px");
+
+            let coins = document.getElementById("coins")
+            coins.appendChild(coin)
+            
+        }, 1000);        
     </script>
 </body>
 </html>
